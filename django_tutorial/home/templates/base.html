@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        a:hover{
+            background-color: grey;
+            border:1px solid yellow;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="navbar bg-primary text-light">
+        <div class="col-6">
+            <h2 class="ms-5">City Hospital</h2>
+        </div>
+        <div class="col-6">
+            <a href="{% url 'home' %}" class="text-light text-decoration-none mx-2 p-2 rounded">Home</a>
+            <a href="{% url 'about' %}" class="text-light text-decoration-none mx-2 p-2 rounded">About</a>
+            <a href="{% url 'booking' %}" class="text-light text-decoration-none mx-2 p-2 rounded">Booking</a>
+            <a href="{% url 'doctors' %}" class="text-light text-decoration-none mx-2 p-2 rounded" >Doctors</a>
+            <a href="{% url 'department' %}" class="text-light text-decoration-none mx-2 p-2 rounded">Departments</a>
+            <a href="{% url 'contact' %}" class="text-light text-decoration-none mx-2 p-2 rounded">Contact Us</a>
+        </div>
+    </div>
+    {% block content %}
+
+
+
+    {% endblock %}
+
+
+
+<footer>
+    <div class="footer bg-primary"style="height:40px">
+       <div class="row text-center">
+        <div class="col-6 mt-2">
+            <h4>Emergency Contact Number:0123456789</h4>
+
+        </div>
+        <div class="col-6 mt-2">
+            <p>@2023 City Hospital All Right Reserved</p>
+            
+        </div>
+       </div>
+     
+            
+        
+    </div>
+</footer>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>
